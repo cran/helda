@@ -1,0 +1,65 @@
+
+R version 3.6.1 (2019-07-05) -- "Action of the Toes"
+Copyright (C) 2019 The R Foundation for Statistical Computing
+Platform: x86_64-apple-darwin15.6.0 (64-bit)
+
+R est un logiciel libre livré sans AUCUNE GARANTIE.
+Vous pouvez le redistribuer sous certaines conditions.
+Tapez 'license()' ou 'licence()' pour plus de détails.
+
+R est un projet collaboratif avec de nombreux contributeurs.
+Tapez 'contributors()' pour plus d'information et
+'citation()' pour la façon de le citer dans les publications.
+
+Tapez 'demo()' pour des démonstrations, 'help()' pour l'aide
+en ligne ou 'help.start()' pour obtenir l'aide au format HTML.
+Tapez 'q()' pour quitter R.
+
+> library(testthat)
+> library(helda)
+Le chargement a nécessité le package : dplyr
+
+Attachement du package : ‘dplyr’
+
+The following object is masked from ‘package:testthat’:
+
+    matches
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+Le chargement a nécessité le package : ggplot2
+Le chargement a nécessité le package : sqldf
+Le chargement a nécessité le package : gsubfn
+Le chargement a nécessité le package : proto
+Le chargement a nécessité le package : RSQLite
+Le chargement a nécessité le package : stringr
+> 
+> testthat::test_dir('testthat')
+✔ |  OK F W S | Context
+⠏ |   0       | Proc Freq Function✖ |   0 1     | Proc Freq Function
+────────────────────────────────────────────────────────────────────────────────
+test-proc_freq.R:14: error: proc freq
+objet 'data_expecteds' introuvable
+Backtrace:
+ 1. testthat::expect_equal(proc_freq(data$Species), data_expecteds) testthat/test-proc_freq.R:14:2
+ 2. testthat::quasi_label(enquo(expected), expected.label, arg = "expected")
+ 3. rlang::eval_bare(expr, quo_get_env(quo))
+────────────────────────────────────────────────────────────────────────────────
+
+══ Results ═════════════════════════════════════════════════════════════════════
+Duration: 0.1 s
+
+OK:       0
+Failed:   1
+Warnings: 0
+Skipped:  0
+> 
+> proc.time()
+utilisateur     système      écoulé 
+      1.377       0.160       1.537 
