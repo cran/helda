@@ -8,24 +8,27 @@
 #'
 #' @import ggplot2 dplyr
 #' @importFrom stats quantile
-#' @param predictions vector of predictions. These are generally the result of a machine learning model.
+#' @param predictions a vector of predictions. These are generally the result of a machine learning model.
 #' The predictions must be probabilities (a real number between 0 and 1).
-#' @param true_labels vector of true labels.
-#' @param positive_label string that specify the positive label (Y=1) in the `true_labels`
-#' @return a ggplot object containing the lift effect
+#' @param true_labels a vector of true labels.
+#' @param positive_label a character or integer that specify the positive label (Y=1) in the `true_labels`.
+#' @return a ggplot object containing the lift effect.
 #' @author Simon CORDE
-#' @keywords lift curve machine learning classification
+#' @keywords lift effect machine learning classification
+#' @seealso lift_curve
 #' @references Link to the author's github package repository:
 #' \url{https://www.github.com/Redcart/helda}
 #' @export lift_effect
 #' @examples
 #' data_training <- titanic_training
 #' data_validation <- titanic_validation
-#' model_glm <- glm(formula="Survived ~ Pclass + Sex + Age + SibSp + Fare + Embarked",
-#' data=data_training,
-#' family=binomial(link="logit"))
-#' predictions <- predict(object=model_glm, newdata=titanic_validation, type="response")
-#' lift_effect(predictions=predictions, true_labels=titanic_validation$Survived, positive_label=1)
+#' model_glm <- glm(formula = "Survived ~ Pclass + Sex + Age + SibSp + Fare + Embarked",
+#' data = data_training,
+#' family = binomial(link = "logit"))
+#' predictions <- predict(object = model_glm, newdata = data_validation, type = "response")
+#' plot <- lift_effect(predictions = predictions, true_labels = data_validation$Survived,
+#' positive_label = 1)
+#' plot
 
 
 lift_effect <- function(predictions, true_labels, positive_label)
@@ -37,11 +40,10 @@ lift_effect <- function(predictions, true_labels, positive_label)
     arrange(desc(predictions))
 
   n <- length(true_labels)
-  step <- floor(n/100)
-  points <- seq(1, n, step)
-  quantiles <- quantile(0:n)
+  points <- seq(1, n, 1)
 
   lift_1 <- c()
+  quantiles <- quantile(points, probs = seq(0, 1, 0.2))
 
   for (i in 1:length(points))
   {
@@ -55,7 +57,7 @@ lift_effect <- function(predictions, true_labels, positive_label)
     geom_hline(yintercept = mean(true_labels == positive_label), lty = "dashed", color = "grey") +
     coord_cartesian(ylim = c(0, 1)) +
     scale_x_continuous(breaks = as.vector(quantiles), labels = names(quantiles)) +
-    ggtitle("Lift Effect Curve") +
+    ggtitle("Lift Effect") +
     xlab("Cumulative Population") +
     ylab("% True Positive Label") +
     theme_bw() +
