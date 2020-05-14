@@ -1,7 +1,7 @@
 Package: helda
 Title: Preprocess Data and Get Better Insights from Machine Learning
         Models
-Version: 1.1.0
+Version: 1.1.1
 Authors@R: person("Simon", "Corde", email = "simon.corde@hotmail.fr", role = c("aut", "cre"))
 Description: The main focus is on preprocessing and data visualization of machine learning models performances. 
   Some functions allow to fill in gaps in time series using linear interpolation on panel data, some functions 
@@ -18,8 +18,8 @@ URL: https://www.github.com/Redcart/helda
 BugReports: https://github.com/Redcart/helda/issues
 RoxygenNote: 7.1.0
 NeedsCompilation: no
-Packaged: 2020-05-01 07:21:40 UTC; simon
+Packaged: 2020-05-14 10:53:56 UTC; simon
 Author: Simon Corde [aut, cre]
 Maintainer: Simon Corde <simon.corde@hotmail.fr>
 Repository: CRAN
-Date/Publication: 2020-05-01 09:10:02 UTC
+Date/Publication: 2020-05-14 11:40:03 UTC
