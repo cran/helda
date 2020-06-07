@@ -1,6 +1,6 @@
-ec81bbc54c0ff198e5ad5aa9646c4a7e *DESCRIPTION
+2c0f7f9570377189d153af3c2aa9e02b *DESCRIPTION
 1df913ded0135affbe7ec8e0256da21f *NAMESPACE
-98a2f33fa7015a158a0ae5815df27d66 *NEWS.md
+de66aad9c2f08986895091a76ebb2c84 *NEWS.md
 c5d34d267f42afd81a1a2fdc827f2637 *R/cluster_centroid.R
 c40c83edf1fa712fad92a3c2aff4fc42 *R/compute_global_inertia.R
 2f1be83635e47bd7b6161b3f67a50dd6 *R/compute_inertia_ahc.R
@@ -17,7 +17,7 @@ ce82c7f57abe6011442a7b930940c9df *R/start_end_to_fill.R
 67c42a22ea5e6a56d13b403e5c7e8fca *R/titanic_validation.R
 64b2443b7543ae2d9676f8915e2c28d1 *R/windows_to_linux_path.R
 6d54795308a3306cd30adc87f36cd441 *R/world_countries_pop.R
-6c3ecdd223efeb819c80369395383556 *README.md
+11e4045034ad65ddb671e2ac2711ed6a *README.md
 d9d39e8ec799dd4fd85f959adb20053e *data/datalist
 feabaef202be55a1d80d358a5271d351 *data/titanic_testing.RData
 02d36906722e05e6b962680deaf3ceb8 *data/titanic_training.RData
@@ -57,6 +57,6 @@ ae9b8f7cdd05144edb6a8976672f13b7 *tests/testthat/proc_freq_test.Rda
 303e90edaf863c7a0d1647080b42a9a4 *tests/testthat/test-create_formula.R
 8d2562f96b510eb7c5b7985617921f16 *tests/testthat/test-fill_gaps_time_series.R
 7d46c06b8128eba31184c29b3ef74138 *tests/testthat/test-global_inertia.R
-390a092b9cd6494f5bb37cd4813251ee *tests/testthat/test-lift_curve.R
-498ee4f8bc969e4f4ce689764c030eef *tests/testthat/test-lift_effect.R
+3e77a33041c00fa3a34d21756f6a7bdd *tests/testthat/test-lift_curve.R
+947ea2e07d1b88df1213c3d10b4a03ee *tests/testthat/test-lift_effect.R
 c066b064ef1a5f869f41fa758fb374ba *tests/testthat/test-proc_freq.R
